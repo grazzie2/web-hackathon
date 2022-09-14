@@ -3,20 +3,21 @@ const qna = document.querySelector("#qna");
 const result = document.querySelector("#result");
 const endPoint = 12; //문제의 수
 
-function start() {
-  main.getElementsByClassName.webkitAnimation = "fadeOut ls";
-  main.style.animation = "fadeOut ls";
+function start(){
+  main.style.WebkitAnimation = "fadeOut 1s";
+  main.style.animation = "fadeOut 1s";
   setTimeout(() => {
-    qna.style.webkitAnimation = "fadeIn ls";
-    qna.style.animation = "fadeIn ls";
+    qna.style.WebkitAnimation = "fadeIn 1s";
+    qna.style.animation = "fadeIn 1s";
     setTimeout(() => {
       main.style.display = "none";
-      qna.style.display = "block";
-    }, 450);
+      qna.style.display = "block"
+    }, 450)
     let qIdx = 0;
     goNext(qIdx);
   }, 450);
 }
+
 
 function goNext(qIdx) {
   if (qIdx == endPoint) {
@@ -30,10 +31,11 @@ function goNext(qIdx) {
     addAnswer(qnaList[qIdx].a[i].answer, qIdx, i);
   }
   var countstatusNum = document.querySelector(".countStatus");
-    countstatusNum;.innerHTML = (qIdx + 1) + "/" + endPoint;
+    countstatusNum.innerHTML = (qIdx + 1) + "/" + endPoint;
     var status = document.querySelector('.statusBar');
     status.style.width = (100 / endPoint) * (qIdx) + "%";
 }
+
 function addAnswer(answerText, qIdx, idx) {
     var a = document.querySelector('.aBox');
     var answer = document.createElement('button'); //answer라는 변수에 버튼 생성
@@ -48,7 +50,7 @@ function addAnswer(answerText, qIdx, idx) {
 
     answer.innerHTML = answerText;
 
-    answer.addEventListener("click", function ()) {
+    answer.addEventListener("click", function () {
         var children = document.querySelectorAll('.answerList');
         for (let i = 0; i < children.length; i++){
             //클릭시 질문 버튼 사라지게
@@ -67,8 +69,7 @@ function addAnswer(answerText, qIdx, idx) {
             goNext(qIdx);
           }, 450);
     }
-
-}
+    )
 
 function goResult() {
     qna.style.webkitAnimation = "fadeOut ls";
@@ -82,6 +83,7 @@ function goResult() {
         }, 450);
     }, 450);
     setResult();
+    
 }function calResult(){
     var mbti = "";
 
@@ -127,3 +129,5 @@ function setResult(){
 
     const resultDesc3 = document.querySelector('.resultDesc3');
     resultDesc3.innerHTML = mbti_real_result.dislike;
+}
+}
