@@ -85,13 +85,7 @@ function goResult() {
     setResult();
     
 }function calResult(){
-    var mbti = "";
-
-        parseInt(document.getElementById("EI").getAttribute('value')) <1 ? mbti += "I" : mbti += "E";
-        parseInt(document.getElementById("SN").getAttribute('value')) <1 ? mbti += "N" : mbti += "S";
-        parseInt(document.getElementById("TF").getAttribute('value')) <1 ? mbti += "F" : mbti += "T";
-        parseInt(document.getElementById("JP").getAttribute('value')) <1 ? mbti += "P" : mbti += "J";
-        return mbti;
+   // 결과 계산
 }
 
 function setResult(){
