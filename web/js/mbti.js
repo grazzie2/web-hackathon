@@ -90,16 +90,16 @@ function calResult() {
     cnt2 = 0,
     cnt3 = 0;
   console.log(cnt0, cnt1, cnt2, cnt3);
-  document.getElementById("0").getAttribute("value") >= 1
+  parseint(document.getElementById("0").getAttribute("type")) >= 1
     ? (cnt0 += 1)
     : (cnt0 = cnt0);
-  document.getElementById("1").getAttribute("value") >= 1
+  parseint(document.getElementById("1").getAttribute("type")) >= 1
     ? (cnt1 += 1)
     : (cnt1 = cnt1);
-  document.getElementById("2").getAttribute("value") >= 1
+  parseint(document.getElementById("2").getAttribute("type")) >= 1
     ? (cnt2 += 1)
     : (cnt2 = cnt2);
-  document.getElementById("3").getAttribute("value") >= 1
+  parseint(document.getElementById("3").getAttribute("type")) >= 1
     ? (cnt3 += 1)
     : (cnt3 = cnt3);
   var max;
