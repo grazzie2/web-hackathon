@@ -3,6 +3,7 @@ const qna = document.querySelector("#qna");
 const result = document.querySelector("#result");
 const endPoint = 12; //문제의 수
 
+<<<<<<< HEAD
 function start() {
   main.style.WebkitAnimation = "fadeOut 1s";
   main.style.animation = "fadeOut 1s";
@@ -136,3 +137,8 @@ function addAnswer(answerText, qIdx, idx) {
     resultDesc3.innerHTML = mbti_real_result.dislike;
   }
 }
+=======
+
+
+
+>>>>>>> fb67ee8a7a25bdc3c2f9d6b69d893edbaebb6307
