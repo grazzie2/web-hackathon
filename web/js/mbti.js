@@ -43,7 +43,7 @@ function addAnswer(answerText, qIdx, idx) {
   answer.classList.add("py-3");
   answer.classList.add("mx-auto");
 
-  answer.classList.add("faceIn");
+  answer.classList.add("fadeIn");
 
   a.appendChild(answer); //a에 answer가 소속 될 수 있도록
 
@@ -68,6 +68,72 @@ function addAnswer(answerText, qIdx, idx) {
       goNext(qIdx);
     }, 450);
   });
+}
+function goResult() {
+  qna.style.webkitAnimation = "fadeOut ls";
+  qna.style.animation = "fadeOut ls";
+  setTimeout(() => {
+    result.style.webkitAnimation = "fadeIn ls";
+    result.style.animation = "fadeOut ls";
+    setTimeout(() => {
+      qna.style.display = "none";
+      result.style.display = "block";
+    }, 450);
+  }, 450);
+  setResult();
+}
+function calResult() {
+  var mbti = "";
+
+  parseInt(document.getElementById("EI").getAttribute("value")) < 1
+    ? (mbti += "I")
+    : (mbti += "E");
+  parseInt(document.getElementById("SN").getAttribute("value")) < 1
+    ? (mbti += "N")
+    : (mbti += "S");
+  parseInt(document.getElementById("TF").getAttribute("value")) < 1
+    ? (mbti += "F")
+    : (mbti += "T");
+  parseInt(document.getElementById("JP").getAttribute("value")) < 1
+    ? (mbti += "P")
+    : (mbti += "J");
+  return mbti;
+}
+
+function setResult() {
+  let mbti_result = calResult();
+
+  function find_mbti(element) {
+    if (element.name === mbti_result) return true;
+  }
+
+  const mbti_real_result = infoArray.find(find_mbti);
+
+  const resultNameIntro = document.querySelector(".resultIntro");
+  resultNameIntro.innerHTML = mbti_real_result.subtitle;
+
+  const resultTitle = document.querySelector(".resultTitle");
+  resultTitle.innerHTML = mbti_real_result.title + mbti_real_result.char;
+
+  var resultImg = document.createElement("img");
+  const imgDiv = document.querySelector("#resultImg");
+  var imgURL = mbti_real_result.img;
+
+  resultImg.src = imgURL;
+  resultImg.classList.add("img-fluid");
+  imgDiv.appendChild(resultImg);
+
+  const resultName = document.querySelector(".resultNmae");
+  resultName.innerHTML = mbti_real_result.name;
+
+  const resultDesc1 = document.querySelector(".resultDesc1");
+  resultDesc1.innerHTML = mbti_real_result.explain;
+
+  const resultDesc2 = document.querySelector(".resultDesc2");
+  resultDesc2.innerHTML = mbti_real_result.favorite;
+
+  const resultDesc3 = document.querySelector(".resultDesc3");
+  resultDesc3.innerHTML = mbti_real_result.dislike;
 
   function goResult() {
     qna.style.webkitAnimation = "fadeOut ls";
@@ -83,21 +149,7 @@ function addAnswer(answerText, qIdx, idx) {
     setResult();
   }
   function calResult() {
-    var mbti = "";
-
-    parseInt(document.getElementById("EI").getAttribute("value")) < 1
-      ? (mbti += "I")
-      : (mbti += "E");
-    parseInt(document.getElementById("SN").getAttribute("value")) < 1
-      ? (mbti += "N")
-      : (mbti += "S");
-    parseInt(document.getElementById("TF").getAttribute("value")) < 1
-      ? (mbti += "F")
-      : (mbti += "T");
-    parseInt(document.getElementById("JP").getAttribute("value")) < 1
-      ? (mbti += "P")
-      : (mbti += "J");
-    return mbti;
+    // 결과 계산
   }
 
   function setResult() {
