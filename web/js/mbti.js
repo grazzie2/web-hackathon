@@ -25,13 +25,17 @@ function goNext(qIdx) {
   }
   var q = document.querySelector(".qBox");
   q.innerHTML = qnaList[qIdx].q;
+  q.classList.add('my-3');
+  q.classList.add('py-3');
+  q.classList.add('mx-auto');
 
   for (let i in qnaList[qIdx].a) {
     addAnswer(qnaList[qIdx].a[i].answer, qIdx, i);
   }
   var countstatusNum = document.querySelector(".countStatus");
   countstatusNum.innerHTML = qIdx + 1 + "/" + endPoint;
-  var status = document.querySelector(".statusBar");
+
+  var status = document.querySelector(".progress-bar");
   status.style.width = (100 / endPoint) * (qIdx + 1) + "%";
 }
 
@@ -81,6 +85,7 @@ function goResult() {
   setResult();
 }
 function calResult() {
+<<<<<<< HEAD
   var cnt0 = 0,
     cnt1 = 0,
     cnt2 = 0,
@@ -94,6 +99,9 @@ function calResult() {
   max = Math.max(cnt0, cnt1, cnt2, cnt3);
   console.log(max);
   return max;
+=======
+ 
+>>>>>>> 4248ad8b2e23e2e6a4800297edcec19599e844ee
 }
 
 function setResult() {
