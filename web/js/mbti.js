@@ -32,7 +32,7 @@ function goNext(qIdx) {
   var countstatusNum = document.querySelector(".countStatus");
   countstatusNum.innerHTML = qIdx + 1 + "/" + endPoint;
   var status = document.querySelector(".statusBar");
-  status.style.width = (100 / endPoint) * qIdx + "%";
+  status.style.width = (100 / endPoint) * (qIdx + 1) + "%";
 }
 
 function addAnswer(answerText, qIdx, idx) {
