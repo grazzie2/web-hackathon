@@ -105,14 +105,6 @@ function setResult() {
   let mbti_result = calResult();
   console.log(mbti_result)
 
-  function find_mbti(element) {
-    console.log("find_mbti 함수 실행 : ",element.type);
-    if (element.type === mbti_result) {
-      console.log("et / mbtires", element.type, mbti_real_result)
-      return true;
-    }
-  }
-
   const resultName = document.querySelector(".resultName");
   const resultDesc1 = document.querySelector(".resultDesc1");
   const resultDesc2 = document.querySelector(".resultDesc2");
