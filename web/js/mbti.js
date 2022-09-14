@@ -68,71 +68,70 @@ function addAnswer(answerText, qIdx, idx) {
       goNext(qIdx);
     }, 450);
   });
-
-  function goResult() {
-    qna.style.webkitAnimation = "fadeOut ls";
-    qna.style.animation = "fadeOut ls";
+}
+function goResult() {
+  qna.style.webkitAnimation = "fadeOut ls";
+  qna.style.animation = "fadeOut ls";
+  setTimeout(() => {
+    result.style.webkitAnimation = "fadeIn ls";
+    result.style.animation = "fadeOut ls";
     setTimeout(() => {
-      result.style.webkitAnimation = "fadeIn ls";
-      result.style.animation = "fadeOut ls";
-      setTimeout(() => {
-        qna.style.display = "none";
-        result.style.display = "block";
-      }, 450);
+      qna.style.display = "none";
+      result.style.display = "block";
     }, 450);
-    setResult();
+  }, 450);
+  setResult();
+}
+function calResult() {
+  var mbti = "";
+
+  parseInt(document.getElementById("EI").getAttribute("value")) < 1
+    ? (mbti += "I")
+    : (mbti += "E");
+  parseInt(document.getElementById("SN").getAttribute("value")) < 1
+    ? (mbti += "N")
+    : (mbti += "S");
+  parseInt(document.getElementById("TF").getAttribute("value")) < 1
+    ? (mbti += "F")
+    : (mbti += "T");
+  parseInt(document.getElementById("JP").getAttribute("value")) < 1
+    ? (mbti += "P")
+    : (mbti += "J");
+  return mbti;
+}
+
+function setResult() {
+  let mbti_result = calResult();
+
+  function find_mbti(element) {
+    if (element.name === mbti_result) return true;
   }
-  function calResult() {
-    var mbti = "";
 
-    parseInt(document.getElementById("EI").getAttribute("value")) < 1
-      ? (mbti += "I")
-      : (mbti += "E");
-    parseInt(document.getElementById("SN").getAttribute("value")) < 1
-      ? (mbti += "N")
-      : (mbti += "S");
-    parseInt(document.getElementById("TF").getAttribute("value")) < 1
-      ? (mbti += "F")
-      : (mbti += "T");
-    parseInt(document.getElementById("JP").getAttribute("value")) < 1
-      ? (mbti += "P")
-      : (mbti += "J");
-    return mbti;
-  }
+  const mbti_real_result = infoArray.find(find_mbti);
 
-  function setResult() {
-    let mbti_result = calResult();
+  const resultNameIntro = document.querySelector(".resultIntro");
+  resultNameIntro.innerHTML = mbti_real_result.subtitle;
 
-    function find_mbti(element) {
-      if (element.name === mbti_result) return true;
-    }
+  const resultTitle = document.querySelector(".resultTitle");
+  resultTitle.innerHTML = mbti_real_result.title + mbti_real_result.char;
 
-    const mbti_real_result = infoArray.find(find_mbti);
+  var resultImg = document.createElement("img");
+  const imgDiv = document.querySelector("#resultImg");
+  var imgURL = mbti_real_result.img;
 
-    const resultNameIntro = document.querySelector(".resultIntro");
-    resultNameIntro.innerHTML = mbti_real_result.subtitle;
+  resultImg.src = imgURL;
+  resultImg.classList.add("img-fluid");
+  imgDiv.appendChild(resultImg);
 
-    const resultTitle = document.querySelector(".resultTitle");
-    resultTitle.innerHTML = mbti_real_result.title + mbti_real_result.char;
+  const resultName = document.querySelector(".resultNmae");
+  resultName.innerHTML = mbti_real_result.name;
 
-    var resultImg = document.createElement("img");
-    const imgDiv = document.querySelector("#resultImg");
-    var imgURL = mbti_real_result.img;
+  const resultDesc1 = document.querySelector(".resultDesc1");
+  resultDesc1.innerHTML = mbti_real_result.explain;
 
-    resultImg.src = imgURL;
-    resultImg.classList.add("img-fluid");
-    imgDiv.appendChild(resultImg);
+  const resultDesc2 = document.querySelector(".resultDesc2");
+  resultDesc2.innerHTML = mbti_real_result.favorite;
 
-    const resultName = document.querySelector(".resultNmae");
-    resultName.innerHTML = mbti_real_result.name;
-
-    const resultDesc1 = document.querySelector(".resultDesc1");
-    resultDesc1.innerHTML = mbti_real_result.explain;
-
-    const resultDesc2 = document.querySelector(".resultDesc2");
-    resultDesc2.innerHTML = mbti_real_result.favorite;
-
-    const resultDesc3 = document.querySelector(".resultDesc3");
-    resultDesc3.innerHTML = mbti_real_result.dislike;
-  }
+  const resultDesc3 = document.querySelector(".resultDesc3");
+  resultDesc3.innerHTML = mbti_real_result.dislike;
 }
