@@ -43,7 +43,7 @@ function addAnswer(answerText, qIdx, idx) {
   answer.classList.add("py-3");
   answer.classList.add("mx-auto");
 
-  answer.classList.add("faceIn");
+  answer.classList.add("fadeIn");
 
   a.appendChild(answer); //a에 answer가 소속 될 수 있도록
 
