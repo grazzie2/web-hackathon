@@ -4,25 +4,44 @@
 @import "animation.css";
 
 @font-face {
-  font-family: "yg-jalnan";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff")
-    format("woff");
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'Cafe24Ssurround';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: "Pretendard-Medium";
-  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff")
-    format("woff");
-  font-weight: 500;
-  font-style: normal;
+    font-family: 'RixInooAriDuriR';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2207-01@1.0/RixInooAriDuriR.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
 }
 
-.jalnan {
-  font-family: "yg-jalnan";
+@font-face {
+    font-family: 'GangwonEdu_OTFBoldA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GangwonEduPowerExtraBoldA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
-.pretendard {
-  font-family: "Pretendard-Medium";
+.BoildFont{
+    font-family: 'Cafe24Ssurround';
+}
+
+.CuteBoildFont{
+    font-family: 'RixInooAriDuriR';
+}
+
+.mainFont{
+    font-family: 'GangwonEdu_OTFBoldA';
+}
+
+.StrongFont{
+    font-family: 'GangwonEduPowerExtraBoldA';
 }
