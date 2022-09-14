@@ -1,4 +1,4 @@
-const qnaLit = [
+const qnaList = [
     //1번 질문
     {
         q: "나는 어플리케이션 개발에....",
