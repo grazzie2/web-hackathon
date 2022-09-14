@@ -88,6 +88,7 @@ function calResult() {
   var result = type.indexOf(Math.max(...type));
   return result;
 
+<<<<<<< HEAD
   function setResult() {
     let mbti_result = calResult();
 
@@ -156,4 +157,73 @@ function calResult() {
       resultDesc3.innerHTML = mbti_real_result.dislike;
     }
   }
+=======
+function setResult() {
+  let mbti_result = calResult();
+
+  function find_mbti(element) {
+    if (element.name === mbti_result) return true;
+  }
+  const resultDesc1 = document.querySelector(".resultDesc1");
+  resultDesc1.innerHTML = mbti_real_result.explain;
+
+  const resultDesc2 = document.querySelector(".resultDesc2");
+  resultDesc2.innerHTML = mbti_real_result.favorite;
+
+  const resultDesc3 = document.querySelector(".resultDesc3");
+  resultDesc3.innerHTML = mbti_real_result.dislike;
+
+  function goResult() {
+    qna.style.webkitAnimation = "fadeOut ls";
+    qna.style.animation = "fadeOut ls";
+    setTimeout(() => {
+      result.style.webkitAnimation = "fadeIn ls";
+      result.style.animation = "fadeOut ls";
+      setTimeout(() => {
+        qna.style.display = "none";
+        result.style.display = "block";
+      }, 450);
+    }, 450);
+    setResult();
+  }
+  function calResult() {
+    // 결과 계산
+  }
+
+  function setResult() {
+    let mbti_result = calResult();
+
+    function find_mbti(element) {
+      if (element.name === mbti_result) return true;
+    }
+
+    const mbti_real_result = infoArray.find(find_mbti);
+
+    const resultNameIntro = document.querySelector(".resultIntro");
+    resultNameIntro.innerHTML = mbti_real_result.subtitle;
+
+    const resultTitle = document.querySelector(".resultTitle");
+    resultTitle.innerHTML = mbti_real_result.title + mbti_real_result.char;
+
+    var resultImg = document.createElement("img");
+    const imgDiv = document.querySelector("#resultImg");
+    var imgURL = mbti_real_result.img;
+
+    resultImg.src = imgURL;
+    resultImg.classList.add("img-fluid");
+    imgDiv.appendChild(resultImg);
+
+    const resultName = document.querySelector(".resultNmae");
+    resultName.innerHTML = mbti_real_result.name;
+
+    const resultDesc1 = document.querySelector(".resultDesc1");
+    resultDesc1.innerHTML = mbti_real_result.explain;
+
+    const resultDesc2 = document.querySelector(".resultDesc2");
+    resultDesc2.innerHTML = mbti_real_result.favorite;
+
+    const resultDesc3 = document.querySelector(".resultDesc3");
+    resultDesc3.innerHTML = mbti_real_result.dislike;
+  }
+>>>>>>> 754264d29d32f2d2eabd917c130ef874bb2234e7
 }
