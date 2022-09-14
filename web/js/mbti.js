@@ -35,32 +35,36 @@ function goNext(qIdx) {
   status.style.width = (100 / endPoint) * (qIdx + 1) + "%";
 }
 
-function addAnswer(answerText, qIdx){
-  var a = document.querySelector('.aBox');
-  var answer = document.createElement('button');
-  answer.classList.add('answerList');
-  answer.classList.add('my-3');
-  answer.classList.add('py-3');
-  answer.classList.add('mx-auto');
-  answer.classList.add('fadeIn');
+function addAnswer(answerText, qIdx) {
+  var a = document.querySelector(".aBox");
+  var answer = document.createElement("button");
+  answer.classList.add("answerList");
+  answer.classList.add("my-3");
+  answer.classList.add("py-3");
+  answer.classList.add("mx-auto");
+  answer.classList.add("fadeIn");
 
   a.appendChild(answer);
   answer.innerHTML = answerText;
 
-  answer.addEventListener("click", function(){
-    var children = document.querySelectorAll('.answerList');
-    for(let i = 0; i < children.length; i++){
-      children[i].disabled = true;
-      children[i].style.WebkitAnimation = "fadeOut 0.5s";
-      children[i].style.animation = "fadeOut 0.5s";
-    }
-    setTimeout(() => {
-      for(let i = 0; i < children.length; i++){
-        children[i].style.display = 'none';
+  answer.addEventListener(
+    "click",
+    function () {
+      var children = document.querySelectorAll(".answerList");
+      for (let i = 0; i < children.length; i++) {
+        children[i].disabled = true;
+        children[i].style.WebkitAnimation = "fadeOut 0.5s";
+        children[i].style.animation = "fadeOut 0.5s";
       }
-      goNext(++qIdx);
-    },450)
-  }, false);
+      setTimeout(() => {
+        for (let i = 0; i < children.length; i++) {
+          children[i].style.display = "none";
+        }
+        goNext(++qIdx);
+      }, 450);
+    },
+    false
+  );
 }
 
 function goResult() {
