@@ -90,10 +90,18 @@ function calResult() {
     cnt2 = 0,
     cnt3 = 0;
   console.log(cnt0, cnt1, cnt2, cnt3);
-  cnt0 = parseInt(document.getElementById("0").getAttribute("value"));
-  cnt1 = parseInt(document.getElementById("1").getAttribute("value"));
-  cnt2 = parseInt(document.getElementById("2").getAttribute("value"));
-  cnt3 = parseInt(document.getElementById("3").getAttribute("value"));
+  document.getElementById("0").getAttribute("value") >= 1
+    ? (cnt0 += 1)
+    : (cnt0 = cnt0);
+  document.getElementById("1").getAttribute("value") >= 1
+    ? (cnt1 += 1)
+    : (cnt1 = cnt1);
+  document.getElementById("2").getAttribute("value") >= 1
+    ? (cnt2 += 1)
+    : (cnt2 = cnt2);
+  document.getElementById("3").getAttribute("value") >= 1
+    ? (cnt3 += 1)
+    : (cnt3 = cnt3);
   var max;
   max = Math.max(cnt0, cnt1, cnt2, cnt3);
   console.log(max);
