@@ -25,13 +25,17 @@ function goNext(qIdx) {
   }
   var q = document.querySelector(".qBox");
   q.innerHTML = qnaList[qIdx].q;
+  q.classList.add('my-3');
+  q.classList.add('py-3');
+  q.classList.add('mx-auto');
 
   for (let i in qnaList[qIdx].a) {
     addAnswer(qnaList[qIdx].a[i].answer, qIdx, i);
   }
   var countstatusNum = document.querySelector(".countStatus");
   countstatusNum.innerHTML = qIdx + 1 + "/" + endPoint;
-  var status = document.querySelector(".statusBar");
+
+  var status = document.querySelector(".progress-bar");
   status.style.width = (100 / endPoint) * (qIdx + 1) + "%";
 }
 
@@ -77,21 +81,7 @@ function goResult() {
   setResult();
 }
 function calResult() {
-  var mbti = "";
-
-  parseInt(document.getElementById("EI").getAttribute("value")) < 1
-    ? (mbti += "I")
-    : (mbti += "E");
-  parseInt(document.getElementById("SN").getAttribute("value")) < 1
-    ? (mbti += "N")
-    : (mbti += "S");
-  parseInt(document.getElementById("TF").getAttribute("value")) < 1
-    ? (mbti += "F")
-    : (mbti += "T");
-  parseInt(document.getElementById("JP").getAttribute("value")) < 1
-    ? (mbti += "P")
-    : (mbti += "J");
-  return mbti;
+ 
 }
 
 function setResult() {
