@@ -1,3 +1,4 @@
+
 const qnaList = [
     {
         q: "??",
@@ -52,7 +53,7 @@ var infoArray =
             char: "",
             name: "",
             title: "",
-            subtitle: "",
+            ssubtitle: "",
             explain: "",
             img: ""
         }
