@@ -5,10 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-     <!--favicon-->
-    <link rel="shortcut icon" href="img/vrbugi.jpg">
-    <link rel="apple-touch-icon-precomposed" href="img/vrbugi.ico" />
-
     <!-- Open Graph 미리보기 정보 노출(썸네일 등) -->
     <meta property="og:image" content="./img/thumbnail.png" />
     <meta property="og:title" content="HSU-LikeLion-MBTI" />
@@ -22,6 +18,10 @@
     <link rel="stylesheet" href="./css/main.css" />
     <link rel="stylesheet" href="./css/qna.css" />
     <link rel="stylesheet" href="./css/result.css" />
+
+    <!--favicon-->
+    <link rel="shortcut icon" href="img/vrbugi.jpg" />
+    <link rel="apple-touch-icon-precomposed" href="img/vrbugi.ico" />
 
     <!-- [Bootstrap] -->
     <link
@@ -45,7 +45,7 @@
       </h1>
       <p class="mainFont mt-3" style="color: darkblue">
         #모바일소프트웨어 트랙 #빅데이터 트랙 <br />
-        #디지털콘텐츠 및 가상현실 트랙 #웹공학 트랙
+        #디지털콘텐츠&가상현실 트랙 #웹공학 트랙
       </p>
       <img
         src="./img/bugi_codding.png"
@@ -110,48 +110,24 @@
       <div class="resultTitle"></div>
 
       <!--- 결과 이미지 --->
-      <div>
-        <img src="./img/vrbugi.jpg" id ="resultImg" class="resultImg col-lg-3 col-md-5 col-sm-8 col-12 mx-auto mt-3" alt="test" title="test">
-      </div>
+      <div id="resultImg"></div>
 
       <!--- 결과 이름 --->
-      <div class="resultName mt-3 mainFont"></div>
+      <div class="resultName"></div>
 
       <!--- 결과 설명 태그 --->
-      <div class="resultDesc1 mt-2 mainFont">
+      <div class="resultDesc">
         <!--- 결과 설명글 --->
-        <div class="resultDesc2 mt-5 mx-auto"></div>
-        
-      </section>
-      <section id="result2" class="mx-auto py-5 px-3">
-        <div class="mainFont mt-3">⬇️ 한성대학교 트랙별 소개페이지 바로가기 ⬇️</div><br>
-        <a href="http://cse.hansung.ac.kr/tracks/mobile">모바일소프트웨어 트랙</a><br>
-        <a href="http://cse.hansung.ac.kr/tracks/web">웹공학 트랙</a><br>
-        <a href="http://cse.hansung.ac.kr/tracks/bigData">빅데이터 트랙</a><br>
-        <a href="http://cse.hansung.ac.kr/tracks/digitalContent">디지털콘텐츠 및 가상현실 트랙</a><br>
+        <div class="resultDesc1"></div>
+
         <!--- 결과 공유하기 --->
-        <div class="share mt-5 mx-auto">
-          <!--- 결과 공유하기 --->
-          <div>공유하기</div>
-          <input
-            type="image"
-            src="./img/kakao.png"
-            class="shareBtn"
-            onclick="js:sendLink()"
-          />
-          <input
-            type="image"
-            src="./img/facebook.png"
-            class="shareBtn"
-            onclick="js:shareFacebook()"
-          />
-          <input
-            type="image"
-            src="./img/linkcopy.png"
-            class="shareBtn"
+        <div class="share">
+          <div class="share_text">공유하기</div>
+          <img
+            class="linkcopy img-fluid"
+            src="./이미지 경로"
             onclick="js:clip()"
           />
-          <br />
         </div>
       </div>
     </section>
