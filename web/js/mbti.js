@@ -1,7 +1,7 @@
 const main = document.querySelector("#main");
 const qna = document.querySelector("#qna");
 const result = document.querySelector("#result");
-const endPoint = 12; //문제의 수
+const endPoint = 8; //문제의 수
 
 function start() {
   main.style.WebkitAnimation = "fadeOut 1s";
