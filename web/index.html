@@ -34,7 +34,7 @@
     <!-- Kakao 공유 위함 -->
     <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
     <script>
-      Kakao.init("javasscript 인증키");
+      Kakao.init("07e2d56927115725ba53c9308e2406b1");
     </script>
   </head>
 
@@ -91,9 +91,13 @@
     <section id="qna" class="mainFont">
       <div class="status mx-auto mt-5">
         <div class="progress col-lg-6 col-md-7 col-sm-8 col-12 mx-auto mt-3">
-            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-            
-          </div>
+          <div
+            class="progress-bar progress-bar-striped progress-bar-animated"
+            role="progressbar"
+            aria-valuenow="75"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          ></div>
         </div>
         <div class="countStatus"></div>
       </div>
@@ -101,10 +105,9 @@
       <div class="aBox"></div>
     </section>
 
-    <section id="result" class="mx-auto my-5 py-5 px-3">
-      <h1 class="BoildFont mt-4">
-        나에게 맞는 <br /><span>컴퓨터공학부 트랙</span>결과</h1>
-      </h1>
+    <section id="result">
+      <!--- 결과 제목 --->
+      <div class="resultTitle"></div>
 
       <!--- 결과 이미지 --->
       <div>
@@ -153,6 +156,7 @@
       </div>
     </section>
     <footer class="copyright">
+      <img src="./이미지 경로" class="copyright_logo" />
       <script src="./js/share.js"></script>
       <script src="./js/data.js"></script>
       <script src="./js/mbti.js"></script>

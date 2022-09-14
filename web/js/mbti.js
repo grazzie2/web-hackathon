@@ -28,9 +28,9 @@ function goNext(qIdx) {
   }
   var q = document.querySelector(".qBox");
   q.innerHTML = qnaList[qIdx].q;
-  q.classList.add('my-3');
-  q.classList.add('py-3');
-  q.classList.add('mx-auto');
+  q.classList.add("my-3");
+  q.classList.add("py-3");
+  q.classList.add("mx-auto");
 
   for (let i in qnaList[qIdx].a) {
     addAnswer(qnaList[qIdx].a[i].answer, qIdx, i);
@@ -96,11 +96,10 @@ function goResult() {
   }, 450);
   setResult();
 }
-
 function calResult(){
   var result = type.indexOf(Math.max(...type));
   return result;
-}
+
 
 function setResult() {
   let mbti_result = calResult();
@@ -144,5 +143,5 @@ function setResult() {
       resultDesc2.innerHTML = infoArray[3].obj;
       break;
   }
-
+}
 }

@@ -1,6 +1,6 @@
 //페이스북 공유
 function shareFacebook() {
-  var sendUrl = "배포 URL을 넣어주세요"; // 전달할 URL
+  var sendUrl = "ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ"; // 전달할 URL
   window.open("http://www.facebook.com/sharer/sharer.php?u=" + sendUrl);
 }
 
@@ -9,20 +9,20 @@ function sendLink() {
   Kakao.Link.sendDefault({
     objectType: "feed",
     content: {
-      title: "유형 테스트 제목",
-      description: "유형테스트 설명",
-      imageUrl: "./썸네일 이미지 경로",
+      title: "나에게 맞는 트랙을 찾아보세요!!",
+      description: "나에게 맞는 트랙을 찾아보세요!!",
+      imageUrl: "webimg\bugi_codding.png",
       link: {
-        mobileWebUrl: "배포 URL을 넣어주세요",
-        webUrl: "배포 URL을 넣어주세요",
+        mobileWebUrl: "ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ",
+        webUrl: "ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ",
       },
     },
     buttons: [
       {
         title: "테스트 하러가기!!",
         link: {
-          mobileWebUrl: "배포 URL을 넣어주세요",
-          webUrl: "배포 URL을 넣어주세요",
+          mobileWebUrl: "ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ",
+          webUrl: "ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ",
         },
       },
     ],
@@ -31,7 +31,7 @@ function sendLink() {
 
 //클립보드에 복사
 function clip() {
-  var url = "배포 URL을 넣어주세요";
+  var url = "ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ";
   var textarea = document.createElement("textarea");
   document.body.appendChild(textarea);
   textarea.value = url;
